@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy – StepGenZ</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #F0F4FF;
+      --surface:   #FFFFFF;
+      --border:    #D6E0FF;
+      --primary:   #1A3FD8;
+      --primary-light: #EEF2FF;
+      --accent:    #FF6B35;
+      --text:      #0F172A;
+      --muted:     #5A6A8A;
+      --tag-bg:    #E8EEFF;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 16px;
+      line-height: 1.75;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: var(--primary);
+      padding: 0 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 24px rgba(26,63,216,0.18);
+    }
+    .header-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+    .logo {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 1.2rem;
+      color: #fff;
+      letter-spacing: -0.02em;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .logo-icon {
+      width: 34px; height: 34px;
+      background: var(--accent);
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      font-size: 1rem;
+    }
+    .header-badge {
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.25);
+      color: #fff;
+      font-size: 0.72rem;
+      font-weight: 500;
+      padding: 4px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.04em;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, #1A3FD8 0%, #0B258A 100%);
+      padding: 64px 2rem 56px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 60% at 50% 120%, rgba(255,107,53,0.18) 0%, transparent 70%);
+    }
+    .hero-label {
+      display: inline-block;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.22);
+      color: rgba(255,255,255,0.9);
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 5px 16px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      color: #fff;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: 12px;
+    }
+    .hero h1 span { color: #FF9F7A; }
+    .hero-sub {
+      color: rgba(255,255,255,0.7);
+      font-size: 1rem;
+      font-weight: 300;
+      max-width: 480px;
+      margin: 0 auto 28px;
+    }
+    .hero-meta {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .meta-tag {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: rgba(255,255,255,0.85);
+      font-size: 0.8rem;
+      padding: 5px 14px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .meta-tag svg { opacity: 0.7; }
+
+    /* ── LAYOUT ── */
+    .page {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 48px 2rem 80px;
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    /* ── SIDEBAR TOC ── */
+    .toc {
+      position: sticky;
+      top: 88px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 20px;
+      font-size: 0.82rem;
+    }
+    .toc-title {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+    .toc a {
+      display: block;
+      color: var(--muted);
+      text-decoration: none;
+      padding: 5px 10px;
+      border-radius: 7px;
+      line-height: 1.4;
+      margin-bottom: 2px;
+      transition: all 0.15s;
+      border-left: 2px solid transparent;
+    }
+    .toc a:hover {
+      color: var(--primary);
+      background: var(--primary-light);
+      border-left-color: var(--primary);
+    }
+    .toc-divider {
+      height: 1px;
+      background: var(--border);
+      margin: 12px 0;
+    }
+    .toc-contact {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--primary-light);
+      border-radius: 8px;
+      padding: 10px;
+      margin-top: 14px;
+      color: var(--primary);
+      font-size: 0.78rem;
+      font-weight: 500;
+      text-decoration: none;
+    }
+
+    /* ── CONTENT ── */
+    .content { min-width: 0; }
+
+    .intro-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--primary);
+      border-radius: 12px;
+      padding: 24px 28px;
+      margin-bottom: 36px;
+      font-size: 0.95rem;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+    .intro-card strong { color: var(--text); }
+
+    /* Section */
+    .section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px 36px;
+      margin-bottom: 24px;
+      scroll-margin-top: 88px;
+    }
+    .section-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 20px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--border);
+    }
+    .section-num {
+      background: var(--primary);
+      color: #fff;
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 0.78rem;
+      width: 32px; height: 32px;
+      border-radius: 9px;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      margin-top: 3px;
+    }
+    .section-title {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 1.18rem;
+      color: var(--text);
+      letter-spacing: -0.02em;
+      line-height: 1.3;
+    }
+
+    h3 {
+      font-family: 'Syne', sans-serif;
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--primary);
+      letter-spacing: 0.01em;
+      margin: 22px 0 10px;
+    }
+
+    p { color: var(--muted); margin-bottom: 12px; font-weight: 300; }
+    p:last-child { margin-bottom: 0; }
+    p strong { color: var(--text); font-weight: 500; }
+
+    ul {
+      list-style: none;
+      margin: 12px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    li {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      color: var(--muted);
+      font-weight: 300;
+      font-size: 0.95rem;
+      line-height: 1.65;
+    }
+    li::before {
+      content: '';
+      width: 6px; height: 6px;
+      background: var(--accent);
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 9px;
+    }
+    li strong { color: var(--text); font-weight: 500; }
+
+    /* Permission cards */
+    .perm-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin: 16px 0;
+    }
+    .perm-card {
+      background: var(--primary-light);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px;
+    }
+    .perm-icon {
+      font-size: 1.5rem;
+      margin-bottom: 8px;
+    }
+    .perm-name {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: var(--primary);
+      margin-bottom: 6px;
+    }
+    .perm-desc {
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.6;
+      font-weight: 300;
+    }
+
+    /* Third-party links */
+    .tp-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin: 14px 0;
+    }
+    .tp-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px 16px;
+    }
+    .tp-name { font-weight: 500; font-size: 0.9rem; color: var(--text); }
+    .tp-link {
+      font-size: 0.78rem;
+      color: var(--primary);
+      text-decoration: none;
+      background: var(--primary-light);
+      padding: 3px 10px;
+      border-radius: 5px;
+      font-weight: 500;
+    }
+    .tp-link:hover { text-decoration: underline; }
+
+    /* Contact card */
+    .contact-card {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 20px 0;
+    }
+    .contact-item {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px 18px;
+    }
+    .contact-label {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+    .contact-value {
+      font-family: 'Syne', sans-serif;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--text);
+    }
+    .contact-value a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+    .contact-value a:hover { text-decoration: underline; }
+
+    /* Rights grid */
+    .rights-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin: 14px 0;
+    }
+    .right-item {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 16px;
+      font-size: 0.85rem;
+    }
+    .right-title {
+      font-weight: 500;
+      color: var(--text);
+      margin-bottom: 3px;
+    }
+    .right-desc { color: var(--muted); font-size: 0.8rem; font-weight: 300; line-height: 1.5; }
+
+    /* Footer */
+    footer {
+      background: var(--text);
+      color: rgba(255,255,255,0.5);
+      text-align: center;
+      padding: 36px 2rem;
+      font-size: 0.82rem;
+      line-height: 1.8;
+    }
+    footer strong { color: rgba(255,255,255,0.9); }
+
+    /* Responsive */
+    @media (max-width: 720px) {
+      .page { grid-template-columns: 1fr; padding: 24px 1rem 60px; }
+      .toc { display: none; }
+      .section { padding: 22px 20px; }
+      .perm-grid, .contact-card, .rights-grid { grid-template-columns: 1fr; }
+      .hero { padding: 44px 1.5rem 40px; }
+    }
+
+    /* Animations */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .hero-label { animation: fadeUp 0.5s ease both; }
+    .hero h1    { animation: fadeUp 0.5s 0.1s ease both; }
+    .hero-sub   { animation: fadeUp 0.5s 0.2s ease both; }
+    .hero-meta  { animation: fadeUp 0.5s 0.3s ease both; }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <div class="logo">
+      <div class="logo-icon">👟</div>
+      StepGenZ
+    </div>
+    <span class="header-badge">Privacy Policy</span>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-label">Legal Document</div>
+  <h1>Privacy <span>Policy</span></h1>
+  <p class="hero-sub">StepGenZ – Walk, Earn &amp; Streak</p>
+  <div class="hero-meta">
+    <span class="meta-tag">
+      <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+      Effective: 13th May 2026
+    </span>
+    <span class="meta-tag">
+      <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+      Last Updated: 13th May 2026
+    </span>
+    <span class="meta-tag">
+      <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+      Google Play Compliant
+    </span>
+  </div>
+</div>
+
+<!-- PAGE LAYOUT -->
+<div class="page">
+
+  <!-- SIDEBAR -->
+  <aside class="toc">
+    <div class="toc-title">Contents</div>
+    <a href="#s1">1. Information We Collect</a>
+    <a href="#s2">2. How We Use It</a>
+    <a href="#s3">3. Permissions</a>
+    <a href="#s4">4. Google Login</a>
+    <a href="#s5">5. Advertising</a>
+    <a href="#s6">6. Rewards &amp; Shipping</a>
+    <a href="#s7">7. Data Sharing</a>
+    <a href="#s8">8. Third-Party Services</a>
+    <a href="#s9">9. Data Security</a>
+    <a href="#s10">10. Data Retention</a>
+    <a href="#s11">11. Children's Privacy</a>
+    <a href="#s12">12. Your Rights</a>
+    <a href="#s13">13. Policy Changes</a>
+    <a href="#s14">14. Contact Us</a>
+    <div class="toc-divider"></div>
+    <a href="mailto:stepgenz.support@gmail.com" class="toc-contact">
+      ✉️ &nbsp;Contact Support
+    </a>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="content">
+
+    <div class="intro-card">
+      Welcome to <strong>StepGenZ – Walk, Earn &amp; Streak</strong>. We are committed to protecting your personal information and your right to privacy. This Privacy Policy explains what information we collect, how we use it, and what rights you have.<br><br>
+      By downloading, installing, or using the StepGenZ application (<strong>"App"</strong>), you agree to the terms of this Privacy Policy. If you do not agree, please discontinue use of the App.<br><br>
+      This policy applies to the StepGenZ Android application, published by <strong>StepGenZ</strong>, based in <strong>Rajasthan, India</strong>.
+    </div>
+
+    <!-- S1 -->
+    <div class="section" id="s1">
+      <div class="section-header">
+        <div class="section-num">1</div>
+        <div class="section-title">Information We Collect</div>
+      </div>
+      <p>We collect information in the following categories to provide and improve the StepGenZ experience:</p>
+
+      <h3>1.1 Information You Provide Directly</h3>
+      <ul>
+        <li><strong>Google Account Information</strong> (if you sign in with Google): Your name, email address, and profile picture as authorized through Google Sign-In.</li>
+        <li><strong>Reward Redemption Information:</strong> When you claim a physical reward (e.g., t-shirts, posters, gadgets, fitness products, or merchandise), we collect your full name, shipping address, and phone number to fulfill your order.</li>
+      </ul>
+
+      <h3>1.2 Information Collected Automatically</h3>
+      <ul>
+        <li><strong>Device ID:</strong> A unique identifier associated with your device, used for reward tracking, fraud prevention, and syncing push notification tokens.</li>
+        <li><strong>Expo Push Notification Token:</strong> A token generated by the Expo notification service to enable delivery of push notifications to your device.</li>
+        <li><strong>Step &amp; Activity Data:</strong> Daily step counts and walking activity data collected through the Android Physical Activity permission, used solely to power step tracking, challenges, streaks, and coin rewards within the App.</li>
+        <li><strong>App Usage Analytics:</strong> Aggregated data on how you interact with the App, including features accessed, session duration, and in-app events, used to improve App performance and user experience.</li>
+      </ul>
+
+      <h3>1.3 Advertising Data</h3>
+      <ul>
+        <li><strong>Ad Interaction Data:</strong> Google AdMob may collect advertising identifiers (such as Android Advertising ID) and interaction data when you view or engage with ads within the App. This data is governed by Google's Privacy Policy.</li>
+      </ul>
+    </div>
+
+    <!-- S2 -->
+    <div class="section" id="s2">
+      <div class="section-header">
+        <div class="section-num">2</div>
+        <div class="section-title">How We Use Your Information</div>
+      </div>
+      <ul>
+        <li>To provide and operate the App, including step tracking, streak monitoring, coin rewards, spin wheel, challenges, and reward redemption.</li>
+        <li>To authenticate your identity when you sign in using Google Login.</li>
+        <li>To fulfill physical reward orders, including processing your shipping address and contact details.</li>
+        <li>To send you push notifications such as daily reminders, streak alerts, challenge updates, reward announcements, and promotional content.</li>
+        <li>To assign and manage your Device ID for fraud prevention and accurate reward tracking.</li>
+        <li>To analyze App usage and improve our features, performance, and overall user experience.</li>
+        <li>To display advertisements through Google AdMob, including rewarded video ads that allow you to earn in-app coins.</li>
+        <li>To comply with applicable laws and prevent fraudulent or unauthorized activity.</li>
+      </ul>
+    </div>
+
+    <!-- S3 -->
+    <div class="section" id="s3">
+      <div class="section-header">
+        <div class="section-num">3</div>
+        <div class="section-title">Permissions We Request</div>
+      </div>
+      <p>StepGenZ requests the following device permissions. You may be asked to grant these when using the App:</p>
+      <div class="perm-grid">
+        <div class="perm-card">
+          <div class="perm-icon">🦶</div>
+          <div class="perm-name">Physical Activity</div>
+          <div class="perm-desc">Accesses your device's step counter to track daily walking activity, calculate coins, maintain streaks, and evaluate challenge progress. Raw step data is never shared with third parties.</div>
+        </div>
+        <div class="perm-card">
+          <div class="perm-icon">🔔</div>
+          <div class="perm-name">Notifications</div>
+          <div class="perm-desc">Sends push notifications including daily step reminders, streak warnings, challenge alerts, reward updates, and announcements. Disable anytime via Settings → Apps → StepGenZ → Notifications.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- S4 -->
+    <div class="section" id="s4">
+      <div class="section-header">
+        <div class="section-num">4</div>
+        <div class="section-title">Google Login &amp; Authentication</div>
+      </div>
+      <p>StepGenZ offers Google Sign-In as an optional authentication method. You may also use the App without signing in (as a guest). If you choose to sign in with Google:</p>
+      <ul>
+        <li>We receive your basic profile information (name, email, and profile picture) as provided by Google.</li>
+        <li>We use this information to create and manage your in-app account and personalize your experience.</li>
+        <li>We do not receive your Google account password.</li>
+        <li>Your use of Google Sign-In is also governed by <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a> and Terms of Service.</li>
+      </ul>
+      <p style="margin-top:14px;">Guest users may use core features of the App without providing any personal account information; however, certain features such as reward redemption may require account creation.</p>
+    </div>
+
+    <!-- S5 -->
+    <div class="section" id="s5">
+      <div class="section-header">
+        <div class="section-num">5</div>
+        <div class="section-title">Advertising Services (Google AdMob)</div>
+      </div>
+      <p>StepGenZ uses Google AdMob to display advertisements, including rewarded video ads that allow you to earn in-app coins. AdMob may collect and use:</p>
+      <ul>
+        <li><strong>Android Advertising ID (AAID):</strong> A resettable unique identifier that AdMob may use to deliver personalized or contextual advertisements.</li>
+        <li><strong>Ad Interaction Data:</strong> Data on how you interact with ads (e.g., whether you watched a full rewarded video) to calculate coin rewards and optimize ad delivery.</li>
+        <li><strong>Device and Usage Information:</strong> General device information used by AdMob for fraud prevention and ad performance measurement.</li>
+      </ul>
+      <p style="margin-top:14px;">You can opt out of personalized advertising by going to <strong>Settings → Google → Ads → Opt out of Ads Personalization</strong> on your device.</p>
+      <p>Google's data handling is governed by their Privacy Policy: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></p>
+    </div>
+
+    <!-- S6 -->
+    <div class="section" id="s6">
+      <div class="section-header">
+        <div class="section-num">6</div>
+        <div class="section-title">Reward Redemption &amp; Shipping Information</div>
+      </div>
+      <p>When you redeem coins for physical rewards (such as t-shirts, posters, gadgets, fitness products, or merchandise), we collect the following information solely for order fulfillment:</p>
+      <ul>
+        <li>Full name</li>
+        <li>Shipping address (street, city, state/province, postal code, country)</li>
+        <li>Phone number (for delivery coordination)</li>
+      </ul>
+      <p style="margin-top:14px;">This information is used only to process and deliver your order. We may share your shipping details with third-party logistics or courier partners strictly for fulfillment purposes. We do not use this information for marketing without your consent.</p>
+      <p>Order and shipping data is retained for a reasonable period to handle returns, disputes, or customer support requests, after which it is securely deleted.</p>
+    </div>
+
+    <!-- S7 -->
+    <div class="section" id="s7">
+      <div class="section-header">
+        <div class="section-num">7</div>
+        <div class="section-title">How We Share Your Information</div>
+      </div>
+      <p>We do not sell, rent, or trade your personal information to third parties. We may share data only in the following limited circumstances:</p>
+      <ul>
+        <li><strong>Service Providers:</strong> Trusted third-party vendors who assist in operating the App (e.g., cloud hosting, analytics, push notification services). These providers are contractually obligated to handle data securely and only for the purposes we specify.</li>
+        <li><strong>Advertising Partners:</strong> Google AdMob, as described in Section 5.</li>
+        <li><strong>Fulfillment Partners:</strong> Logistics and courier companies for physical reward delivery, as described in Section 6.</li>
+        <li><strong>Legal Compliance:</strong> When required by law, regulation, court order, or government request.</li>
+        <li><strong>Business Transfers:</strong> In the event of a merger, acquisition, or sale of assets, your information may be transferred to the successor entity, subject to this Privacy Policy.</li>
+        <li><strong>With Your Consent:</strong> For any other purpose, with your explicit consent.</li>
+      </ul>
+    </div>
+
+    <!-- S8 -->
+    <div class="section" id="s8">
+      <div class="section-header">
+        <div class="section-num">8</div>
+        <div class="section-title">Third-Party Services</div>
+      </div>
+      <p>StepGenZ integrates with third-party services that have their own privacy policies. We encourage you to review them:</p>
+      <div class="tp-list">
+        <div class="tp-item">
+          <span class="tp-name">🔐 Google Sign-In</span>
+          <a class="tp-link" href="https://policies.google.com/privacy" target="_blank" rel="noopener">View Policy →</a>
+        </div>
+        <div class="tp-item">
+          <span class="tp-name">📢 Google AdMob</span>
+          <a class="tp-link" href="https://policies.google.com/privacy" target="_blank" rel="noopener">View Policy →</a>
+        </div>
+        <div class="tp-item">
+          <span class="tp-name">🔔 Expo Push Notifications</span>
+          <a class="tp-link" href="https://expo.dev/privacy" target="_blank" rel="noopener">View Policy →</a>
+        </div>
+      </div>
+      <p>We are not responsible for the privacy practices of these third-party services and encourage you to review their policies independently.</p>
+    </div>
+
+    <!-- S9 -->
+    <div class="section" id="s9">
+      <div class="section-header">
+        <div class="section-num">9</div>
+        <div class="section-title">Data Security</div>
+      </div>
+      <p>We take the security of your personal information seriously. We implement reasonable and industry-standard technical and organizational measures to protect your data, including:</p>
+      <ul>
+        <li>Encryption of data in transit using HTTPS/TLS protocols.</li>
+        <li>Secure storage practices for data at rest.</li>
+        <li>Limited access controls ensuring only authorized personnel can access personal data.</li>
+        <li>Regular review of data collection, storage, and processing practices.</li>
+      </ul>
+      <p style="margin-top:14px;">However, no method of transmission over the internet or electronic storage is 100% secure. While we strive to protect your information, we cannot guarantee absolute security. In the event of a data breach that affects your rights, we will notify you as required by applicable law.</p>
+    </div>
+
+    <!-- S10 -->
+    <div class="section" id="s10">
+      <div class="section-header">
+        <div class="section-num">10</div>
+        <div class="section-title">Data Retention</div>
+      </div>
+      <p>We retain your personal information only for as long as necessary to fulfill the purposes outlined in this Privacy Policy, unless a longer retention period is required by law.</p>
+      <ul>
+        <li>Account data (Google Sign-In) is retained while your account is active.</li>
+        <li>Step and activity data is retained to maintain your progress, streaks, and reward history.</li>
+        <li>Shipping information is retained for a limited period after order fulfillment for dispute resolution.</li>
+        <li>Analytics data is aggregated and anonymized after a reasonable period.</li>
+      </ul>
+      <p style="margin-top:14px;">You may request deletion of your data at any time by contacting us (see Section 14). Upon a verified request, we will delete or anonymize your personal information within a reasonable timeframe.</p>
+    </div>
+
+    <!-- S11 -->
+    <div class="section" id="s11">
+      <div class="section-header">
+        <div class="section-num">11</div>
+        <div class="section-title">Children's Privacy</div>
+      </div>
+      <p>StepGenZ is not directed to children under the age of 13, and we do not knowingly collect personal information from children under 13 years of age.</p>
+      <p>If you are a parent or guardian and believe your child has provided us with personal information without your consent, please contact us immediately at <a href="mailto:stepgenz.support@gmail.com">stepgenz.support@gmail.com</a>. We will take prompt steps to investigate and delete such information from our systems.</p>
+      <p>If you are between 13 and 17 years of age, please review this Privacy Policy with a parent or guardian before using the App.</p>
+    </div>
+
+    <!-- S12 -->
+    <div class="section" id="s12">
+      <div class="section-header">
+        <div class="section-num">12</div>
+        <div class="section-title">Your Rights &amp; Choices</div>
+      </div>
+      <p>Depending on your location and applicable data protection laws, you may have the following rights:</p>
+      <div class="rights-grid">
+        <div class="right-item">
+          <div class="right-title">✅ Right to Access</div>
+          <div class="right-desc">Request a copy of the personal information we hold about you.</div>
+        </div>
+        <div class="right-item">
+          <div class="right-title">✏️ Right to Correction</div>
+          <div class="right-desc">Request correction of inaccurate or incomplete data.</div>
+        </div>
+        <div class="right-item">
+          <div class="right-title">🗑️ Right to Deletion</div>
+          <div class="right-desc">Request deletion of your personal data, subject to legal obligations.</div>
+        </div>
+        <div class="right-item">
+          <div class="right-title">📦 Right to Portability</div>
+          <div class="right-desc">Request your data in a structured, machine-readable format.</div>
+        </div>
+        <div class="right-item">
+          <div class="right-title">🚫 Right to Object</div>
+          <div class="right-desc">Object to processing of your data for certain purposes.</div>
+        </div>
+        <div class="right-item">
+          <div class="right-title">🔕 Opt Out of Notifications</div>
+          <div class="right-desc">Disable push notifications via your device settings at any time.</div>
+        </div>
+      </div>
+      <p style="margin-top:14px;">To exercise any of these rights, please contact us at <a href="mailto:stepgenz.support@gmail.com">stepgenz.support@gmail.com</a>. We will respond to verified requests within a reasonable timeframe and in accordance with applicable law.</p>
+    </div>
+
+    <!-- S13 -->
+    <div class="section" id="s13">
+      <div class="section-header">
+        <div class="section-num">13</div>
+        <div class="section-title">Changes to This Privacy Policy</div>
+      </div>
+      <p>We may update this Privacy Policy from time to time to reflect changes in our practices, technology, legal requirements, or other factors. When we make material changes, we will:</p>
+      <ul>
+        <li>Update the "Last Updated" date at the top of this policy.</li>
+        <li>Notify you through a prominent in-app notice or push notification.</li>
+      </ul>
+      <p style="margin-top:14px;">Your continued use of the App after any changes take effect constitutes your acceptance of the revised Privacy Policy. We encourage you to review this policy periodically.</p>
+    </div>
+
+    <!-- S14 -->
+    <div class="section" id="s14">
+      <div class="section-header">
+        <div class="section-num">14</div>
+        <div class="section-title">Contact Us</div>
+      </div>
+      <p>If you have any questions, concerns, or requests regarding this Privacy Policy or the way we handle your personal information, please contact our support team:</p>
+      <div class="contact-card">
+        <div class="contact-item">
+          <div class="contact-label">App / Brand</div>
+          <div class="contact-value">StepGenZ</div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-label">Support Email</div>
+          <div class="contact-value"><a href="mailto:stepgenz.support@gmail.com">stepgenz.support@gmail.com</a></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-label">Location</div>
+          <div class="contact-value">Rajasthan, India</div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-label">Response Time</div>
+          <div class="contact-value">Within 30 business days</div>
+        </div>
+      </div>
+      <p>We are committed to resolving any privacy concerns promptly and transparently.</p>
+    </div>
+
+  </main>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <strong>StepGenZ – Walk, Earn &amp; Streak</strong><br>
+  This Privacy Policy is compliant with Google Play Store requirements and applicable data protection regulations.<br>
+  Effective: 13th May 2026 &nbsp;•&nbsp; Last Updated: 13th May 2026 &nbsp;•&nbsp; Rajasthan, India<br><br>
+  Questions? <a href="mailto:stepgenz.support@gmail.com" style="color:rgba(255,255,255,0.7)">stepgenz.support@gmail.com</a>
+</footer>
+
+</body>
+</html>
